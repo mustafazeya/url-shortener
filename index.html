@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickLink - URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-link"></i>
+                <h1>QuickLink</h1>
+            </div>
+            <p class="tagline">Shorten URLs instantly, right in your browser</p>
+        </header>
+
+        <main>
+            <section class="shortener-section">
+                <div class="input-group">
+                    <input 
+                        type="url" 
+                        id="longUrl" 
+                        placeholder="Enter your long URL here..."
+                        autocomplete="url"
+                    >
+                    <input 
+                        type="text" 
+                        id="customSlug" 
+                        placeholder="Custom slug (optional)"
+                        maxlength="20"
+                    >
+                    <button id="shortenBtn" class="btn-primary">
+                        <i class="fas fa-scissors"></i> Shorten URL
+                    </button>
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+            </section>
+
+            <section id="resultSection" class="result-section hidden">
+                <div class="result-card">
+                    <div class="result-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Your shortened URL</h2>
+                    </div>
+                    <div class="shortened-url-container">
+                        <input type="text" id="shortenedUrl" readonly>
+                        <button id="copyBtn" class="btn-icon" title="Copy to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button id="qrBtn" class="btn-icon" title="Generate QR Code">
+                            <i class="fas fa-qrcode"></i>
+                        </button>
+                    </div>
+                    <div id="qrCode" class="qr-code hidden"></div>
+                    <div class="result-stats">
+                        <span><i class="fas fa-chart-line"></i> Clicks: <strong id="clickCount">0</strong></span>
+                        <span><i class="fas fa-calendar"></i> Created: <strong id="createDate"></strong></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="links-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> Your Shortened Links</h2>
+                    <button id="clearAllBtn" class="btn-secondary">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+                <div id="linksList" class="links-list"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>All data stored locally in your browser. No server required.</p>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

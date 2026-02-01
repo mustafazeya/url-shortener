@@ -20,7 +20,7 @@ A beautiful, fast, and privacy-focused URL shortener that runs entirely in your 
 
 ## 🚀 Live Demo
 
-Visit the live demo: [Your GitHub Pages URL]
+Visit the live demo: [https://mustafazeya.github.io/url-shortener/](https://mustafazeya.github.io/url-shortener/)
 
 ## 🛠️ How It Works
 
@@ -42,7 +42,7 @@ When you shorten a URL:
 
 1. **Fork or clone this repository**
    ```bash
-   git clone https://github.com/yourusername/url-shortener.git
+   git clone https://github.com/mustafazeya/url-shortener.git
    cd url-shortener
    ```
 
@@ -50,16 +50,15 @@ When you shorten a URL:
    ```bash
    git add .
    git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/url-shortener.git
+   git remote add origin git@github.com:mustafazeya/url-shortener.git
    git push -u origin main
    ```
 
 3. **Enable GitHub Pages**
-   - Go to your repository settings
-   - Navigate to "Pages" section
-   - Select "main" branch as source
-   - Click Save
-   - Your site will be live at `https://yourusername.github.io/url-shortener/`
+   - Go to your repository settings at https://github.com/mustafazeya/url-shortener/settings/pages
+   - Under "Source", select "GitHub Actions"
+   - The deployment workflow will automatically trigger
+   - Your site will be live at `https://mustafazeya.github.io/url-shortener/`
 
 ### Local Development
 
@@ -106,7 +105,7 @@ Then visit `http://localhost:8000`
 Want a memorable URL? Use custom slugs:
 - Original: `https://example.com/very/long/url`
 - Custom slug: `mylink`
-- Result: `https://yourdomain.com/?s=mylink`
+- Result: `https://mustafazeya.github.io/url-shortener/?s=mylink`
 
 ## 🎨 Customization
 
@@ -166,7 +165,7 @@ Contributions are welcome! Feel free to:
 
 ## 🐛 Issues
 
-Found a bug? Have a suggestion? [Open an issue](https://github.com/yourusername/url-shortener/issues)
+Found a bug? Have a suggestion? [Open an issue](https://github.com/mustafazeya/url-shortener/issues)
 
 ## 🌟 Show Your Support
 
@@ -174,7 +173,7 @@ Give a ⭐️ if you like this project!
 
 ## 📧 Contact
 
-Created with ❤️ by [Your Name]
+Created with ❤️ by [Mustafa Zeya](https://github.com/mustafazeya)
 
 ---
 

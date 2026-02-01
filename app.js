@@ -2,10 +2,8 @@
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 
-// Load theme from localStorage
-const savedTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
+// Update icon based on current theme
+updateThemeIcon(html.getAttribute('data-theme') || 'dark');
 
 themeToggle.addEventListener('click', () => {
     const currentTheme = html.getAttribute('data-theme');

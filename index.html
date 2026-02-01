@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickLink - URL Shortener</title>
+    <title>URL Shortener | QuickLink</title>
+    <meta name="description" content="Free URL shortener with QR codes and click analytics. Shorten URLs instantly with custom slugs, all stored locally in your browser.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const themeFromUrl = urlParams.get('theme');
+            const savedTheme = themeFromUrl || localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (themeFromUrl) localStorage.setItem('theme', themeFromUrl);
+        })();
+    </script>
 </head>
 <body>
     <div class="theme-toggle">
@@ -14,13 +30,14 @@
         </button>
     </div>
 
+    <a href="/" class="home-link" title="Back to Homepage">
+        <i class="fas fa-home"></i>
+    </a>
+
     <div class="container">
         <header>
-            <div class="logo">
-                <i class="fas fa-link"></i>
-                <h1>QuickLink</h1>
-            </div>
-            <p class="tagline">Shorten URLs instantly, right in your browser</p>
+            <h1><i class="fas fa-link"></i> URL Shortener</h1>
+            <p class="tagline">Shorten URLs instantly with custom slugs and QR codes</p>
         </header>
 
         <main>
@@ -71,7 +88,7 @@
             <section class="links-section">
                 <div class="section-header">
                     <h2><i class="fas fa-list"></i> Your Shortened Links</h2>
-                    <button id="clearAllBtn" class="btn-secondary">
+                    <button id="clearAllBtn" class="btn-secondary danger">
                         <i class="fas fa-trash"></i> Clear All
                     </button>
                 </div>
@@ -80,9 +97,9 @@
         </main>
 
         <footer>
-            <p>All data stored locally in your browser. No server required.</p>
+            <p>All data stored locally in your browser</p>
             <div class="footer-links">
-                <a href="https://github.com" target="_blank">
+                <a href="https://github.com/mustafazeya/url-shortener" target="_blank">
                     <i class="fab fa-github"></i> View on GitHub
                 </a>
             </div>
